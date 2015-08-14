@@ -1,0 +1,34 @@
+Trabalho 1:
+    Dijkstra: Comparar complexidade teÛrica x real.
+    Extrair a complexidade empÌrica: Assumindo uma hipÛtese polinomial ou exponencial, tirar os dados e curve-fit
+    RegreÁ„o linear com GNU R
+
+MÛdulos:
+    Script para gerar os casos
+    Script para alimentar os casos ao programa e colher os dados
+    Multiplos programas, um para cada heap, podemos primeiro descobrir qual o melhor tamanho, para depois aplicar
+
+    Estruturas do Programa
+        Heap N-ario
+        Dijkstra
+        Graph Structure: Forward Star (bom pois o grafo √© est√°tico)
+    Algoritmo
+        Ler do arquivo .gr para a estrutura
+        Ler qual a Source e o Target
+        Executar o Dijkstra at√© o Target
+        Cuspir a dist√ncia m√≠nim, tempo de execu√ßo e numero de opera√√es: insert, deletemin e decreasekey
+
+    Script para curve fit
+
+Heap N-√°rio:
+    Ponto p
+    1¬∫filho: n*p + 1
+    x¬filho: n*p + x
+    pai: (p-1)/n (trucated)
+
+Grafos:
+    a) Lista de adjac√cia
+    b) Vetor de adjac√™nica
+        Vetores x Vetores (vetor de ponteiros)
+    c) Forward Star
+        Lista de vetores que apontam pra segmentos de um array com suas respectivas informa√ß√µes.
