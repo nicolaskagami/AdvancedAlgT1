@@ -29,7 +29,7 @@ int main(int argc, char ** argv)
         visited[p-1] = true;
         if(p == tgt) 
         {
-            printf("Distance from %d to %d: %d\n",src,tgt,value);exit(0); 
+            printf("%d\n",value);exit(0); 
             free(visited);
             free(distances);
         }
@@ -55,7 +55,7 @@ int main(int argc, char ** argv)
     }
 
 
-    printf("Not found\n");
+    printf("inf\n");
     free(visited);
     free(distances);
     exit(1);
