@@ -44,7 +44,7 @@ int main(int argc, char ** argv)
         {
             free(visited);
             free(distances);
-            std::cerr << inserts << " " << deletes << " " << updates << std::endl;
+            std::cerr << inserts << " " << deletes << " " << updates << " ";
             std::cerr << std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now()-t).count() << std::endl;
             printf("%u\n",value);exit(0); 
         }
@@ -73,6 +73,8 @@ int main(int argc, char ** argv)
     }
 
 
+    std::cerr << inserts << " " << deletes << " " << updates << " ";
+    std::cerr << std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now()-t).count() << std::endl;
     printf("inf\n");
     free(visited);
     free(distances);

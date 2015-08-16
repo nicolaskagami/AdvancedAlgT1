@@ -11,6 +11,6 @@ do
         mkdir $DIRNAME
     fi
 
-    g++ -DN="$i" Dijkstra/dijkstra.cpp FSgraph/FSgraph.cpp NHeap/NHeap.cpp -o $DIRNAME/dijkstra$i
+    g++ -std=c++0x -DN="$i" Dijkstra/dijkstra.cpp FSgraph/FSgraph.cpp NHeap/NHeap.cpp -o $DIRNAME/dijkstra$i
     let "i=i+1"
 done

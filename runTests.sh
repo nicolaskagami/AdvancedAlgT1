@@ -1,15 +1,28 @@
 #!/bin/bash
 
-TEST="t100.gr"
-SRC=`cat haha | cut -d ' ' -f3`
-TGT=`cat haha | cut -d ' ' -f5`
-DISTANCE=`cat haha | cut -d ' ' -f7`
-RESULT=`./dijkstra $SRC $TGT < $TEST`
+TESTS="./Tests"
 
-if [ $RESULT -eq $DISTANCE ];then
-    echo YAY
-else
-    echo NAY
-fi
+HEAP_TEST_NUMBER=20
+i=1
 
-echo $DISTANCE $RESULT
+while [ $i -le $HEAP_TEST_NUMBER ]
+do
+    EXECDIR="HeapBin/heap$i"
+    EXEC="dijkstra$i"
+    for file in $TESTS/*.gr
+    do
+        TEST=`basename $file .gr`
+        ANSWER="$TESTS/${TEST}.ans"
+        SRC=`cat $ANSWER | cut -d ' ' -f3`
+        TGT=`cat $ANSWER | cut -d ' ' -f5`
+        DISTANCE=`cat $ANSWER | cut -d ' ' -f7`
+        PARAMFILE="$EXECDIR/${EXEC}_${TEST}_param.txt"
+        RESULT=`$EXECDIR/$EXEC $SRC $TGT <$file 2>$PARAMFILE`
+        if [ $RESULT -eq $DISTANCE ];then
+            echo "Processed: $EXEC $TEST $RESULT (Correct)"
+        else
+            echo "Processed: $EXEC $TEST $RESULT (Error)"
+        fi
+    done
+    let "i++"
+done
