@@ -23,7 +23,7 @@ void NHeap<T>::print()
     unsigned i;
     for(i = 0;i<occupation;i++)
     {
-        printf(" %d",heap[i].key);
+        printf(" %d,",heap[i].key);
         std::cout << heap[i].element;
     }
     printf("\n");

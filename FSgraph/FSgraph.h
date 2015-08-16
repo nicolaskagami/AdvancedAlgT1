@@ -29,6 +29,8 @@ class FSgraph
 
         FSgraph(unsigned vertNum, unsigned edgeNum);
         FSgraph(std::istream& in);
+        void preallocate(unsigned vert, unsigned tgt);
+        void indexify();
         ~FSgraph();
         void addEdge(unsigned vert,unsigned tgt,unsigned wht);
         void print();
