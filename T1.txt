@@ -7,6 +7,9 @@ Módulos:
     Script para gerar os casos
     Script para alimentar os casos ao programa e colher os dados
     Multiplos programas, um para cada heap, podemos primeiro descobrir qual o melhor tamanho, para depois aplicar
+    input: ./dijkstra src tgt < graph.gr
+    stdout: distance
+    stderr: insert deletemin update
 
     Estruturas do Programa
         Heap N-ario
