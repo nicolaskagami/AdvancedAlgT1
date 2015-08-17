@@ -1,10 +1,10 @@
 #!/bin/bash
 
 NUM_BATCHES=30
-i=21
+i=1
 while [ $i -le $NUM_BATCHES ]
 do
-    bash buildTests.sh
+    bash buildScalingTests.sh
     bash runTests.sh
     bash formatResults.sh $i
     echo "Batch $i done"
